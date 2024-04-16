@@ -7,7 +7,11 @@ import trabajopractico6.entidades.Rubro;
 
 public class ListadoNombre extends javax.swing.JInternalFrame {
     
-    private DefaultTableModel modelo=new DefaultTableModel();
+    private DefaultTableModel modelo=new DefaultTableModel(){
+        public boolean isCellEditable(int fila, int col){
+            return false;
+        } 
+    };
     private TreeSet<Producto> productos;
     
     public ListadoNombre(TreeSet<Producto>productos) {
